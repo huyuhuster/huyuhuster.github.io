@@ -11,4 +11,4 @@ This is huyuhuster.github.io
 
 ![](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pictures/Jellyfish.jpg)
 
-<img src="https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pictures/Jellyfish.jpg" width="50%" height="50%" />
+
