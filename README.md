@@ -13,4 +13,8 @@ This is huyuhuster.github.io
  
  <hr>
  
+ <img src="https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pictures/Jellyfish.jpg" width="50%" height="50%" />
+ 
+ <hr>
+ 
 <img src="http://img.blog.csdn.net/20151129213701642" width="50%" height="50%" />
