@@ -7,3 +7,6 @@ This is huyuhuster.github.io
 | out of stock | good and plenty   | nice  |
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
+
+
+![](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/Sample Pictures/Jellyfish.jpg)  
