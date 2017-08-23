@@ -9,4 +9,5 @@ This is huyuhuster.github.io
 | ok           | good `zoute` drop | yumm  |
 
 
-![](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pictures/Jellyfish.jpg =100x)
+![](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pictures/Jellyfish.jpg)
+<img src="https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pictures/Jellyfish.jpg" width="50%" height="50%" />
