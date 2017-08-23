@@ -9,4 +9,8 @@ This is huyuhuster.github.io
 | ok           | good `zoute` drop | yumm  |
 
 
+ ![image](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pictures/Jellyfish.jpg)
+ 
+ <hr>
+ 
 <img src="http://img.blog.csdn.net/20151129213701642" width="50%" height="50%" />
