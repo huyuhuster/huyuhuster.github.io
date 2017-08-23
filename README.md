@@ -8,7 +8,8 @@ This is huyuhuster.github.io
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 
- <hr>
 
  ![image](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pictures/Jellyfish.jpg)
  
+ 
+ ![image](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pictures/Chrysanthemum.jpg)
