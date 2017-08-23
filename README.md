@@ -9,5 +9,7 @@ This is huyuhuster.github.io
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 
+![Build Status](https://travis-ci.org/pages-themes/cayman.svg?branch=master)
+
 ![imovie](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pic/Jellyfish.jpg)
 ![imovie](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pic/Jellyfish.jpg)
