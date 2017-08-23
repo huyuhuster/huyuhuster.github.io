@@ -9,4 +9,4 @@ This is huyuhuster.github.io
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 
-![movie](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pic/Jellyfish.jpg)
+![movie](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pic/Jellyfish.jpg =100x100)
