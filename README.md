@@ -8,3 +8,5 @@ This is huyuhuster.github.io
 | out of stock | good and plenty   | nice  |
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
+
+![movie](https://github.com/huyuhuster/huyuhuster.github.io/raw/master/pictures/Koala.jpg)
