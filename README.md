@@ -544,7 +544,7 @@ $ git push origin v1.0
 
 Lorentzian Peak function:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=Loren(x)&space;=&space;\frac{0.5\cdot&space;a0&space;\cdot&space;a1}{\pi}&space;\cdot\frac{1}{Max[(x&space;-&space;a2)^2&space;&plus;&space;0.25&space;a1^{2},&space;10^{-10}]}&space;&plus;&space;b0&space;&plus;&space;b1\cdot&space;x&space;&plus;&space;b2\cdot&space;x^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Loren(x)&space;=&space;\frac{0.5\cdot&space;a0&space;\cdot&space;a1}{\pi}&space;\cdot\frac{1}{Max[(x&space;-&space;a2)^2&space;&plus;&space;0.25&space;a1^{2},&space;10^{-10}]}&space;&plus;&space;b0&space;&plus;&space;b1\cdot&space;x&space;&plus;&space;b2\cdot&space;x^2" title="Loren(x) = \frac{0.5\cdot a0 \cdot a1}{\pi} \cdot\frac{1}{Max[(x - a2)^2 + 0.25 a1^{2}, 10^{-10}]} + b0 + b1\cdot x + b2\cdot x^2" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\small&space;Loren(x)&space;=&space;\frac{0.5\cdot&space;a0&space;\cdot&space;a1}{\pi}&space;\cdot\frac{1}{Max[(x&space;-&space;a2)^2&space;&plus;&space;0.25&space;a1^{2},&space;10^{-10}]}&space;&plus;&space;b0&space;&plus;&space;b1\cdot&space;x&space;&plus;&space;b2\cdot&space;x^2" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{120}&space;\small&space;Loren(x)&space;=&space;\frac{0.5\cdot&space;a0&space;\cdot&space;a1}{\pi}&space;\cdot\frac{1}{Max[(x&space;-&space;a2)^2&space;&plus;&space;0.25&space;a1^{2},&space;10^{-10}]}&space;&plus;&space;b0&space;&plus;&space;b1\cdot&space;x&space;&plus;&space;b2\cdot&space;x^2" title="\small Loren(x) = \frac{0.5\cdot a0 \cdot a1}{\pi} \cdot\frac{1}{Max[(x - a2)^2 + 0.25 a1^{2}, 10^{-10}]} + b0 + b1\cdot x + b2\cdot x^2" /></a>
 
 ```c++
    // Quadratic background function
