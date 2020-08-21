@@ -1,3 +1,5 @@
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+
 - [第一届(2020)高能物理计算暑期学校上机练习](#----2020---------------)
   * [一，作业提交及使用](#---------)
     + [1，作业准备](#1-----)
