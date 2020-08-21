@@ -358,6 +358,169 @@ hep_container shell MYIMAGE
 
 # 三，Git 使用
 
+## 1 git本地配置
+
+- 配置用户及邮箱
+
+~~~bash
+# 请修改your name为自己的名字
+$ git config --global user.name "your name"
+# 请修改your_email_address为自己的邮箱地址
+$ git config --global user.email your_email_address
+~~~
+
+- 配置编辑器
+
+~~~bash
+$ git config --global core.editor vim
+~~~
+
+- 查看配置文件及选项
+
+~~~bash
+$ git config --list --show-origin
+~~~
+
+- 设置 alias (可选)
+```bash
+[user]
+        name = "Your-name"
+        email = "Your-email"
+
+[alias]
+        a = add .
+        v = !gitk
+        br = branch
+        ci = commit -m
+        cm = commit -m
+        co = checkout
+        df = diff
+        dump = cat-file -p
+        hs = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+        last = log -1 HEAD
+        pl = pull
+        ps = push
+        st = status
+        type = cat-file -t
+        sum = shortlog -sn
+
+[push]
+        default = matching
+```
+- ssh 配置(可选)
+```bash
+#### ~/.ssh/config
+Host code
+        Hostname code.ihep.ac.cn
+        User git
+        Identityfile ~/.ssh/id_rsa
+```
+
+## 2 准备本地代码仓库
+
+~~~bash
+$ mkdir -p ~/source
+$ rsync -avru /cvmfs/slurm.ihep.ac.cn/2020_summer_school_git/marigold ~/source/
+$ cd ~
+$ git clone ~/source/marigold
+~~~
+
+
+
+## 3 工作目录操作
+
+~~~bash
+$ cd ~/marigold
+# 编辑修改该目录下的文件README
+$ echo "1. Modified to check file status after edit." >> README.md
+# 编辑后查看文件状态
+$ git status
+~~~
+
+
+
+## 4 暂存操作
+
+~~~bash
+# 将修改的文件README.md暂存
+$ git add README.md
+# 查看文件状态
+$ git status
+~~~
+
+
+
+## 5 提交操作
+
+~~~bash
+# 提交暂存区的文件
+$ git commit -m 'Add one line on README.md.'
+# 查看文件状态
+$ git status -s
+~~~
+
+
+
+## 6 远程仓库操作
+
+~~~bash
+# 查看远程仓库
+$ git remote -v
+# 发布到远程仓库(一般 push 分支)
+$ git push origin master
+~~~
+
+
+
+## 7 分支操作
+
+~~~bash
+# 查看分支
+$ git branch
+# 创建分支
+$ git branch chkbr
+# 切换到新建的branch
+$ git checkout chkbr
+# 查看分支
+$ git branch
+# 修改文件README.md
+echo "2. Add a new branch named chkbr for branch operation practice." >> README.md
+# 将修改后的文件放置暂存区
+$ git add README.md
+# 提交修改后的文件
+$ git commit -m 'Modify README.md - practise branch operations.'
+# push 分支到远程仓库
+$ git push origin chkbr
+# 切换回master分支
+$ git checkout master
+# 合并分支chkbr
+$ git merge chkbr
+# 查看branch
+$ git branch
+# 查看操作日志
+$ git log --oneline --decorate --graph –all
+# 删除分支
+$ git branch -d chkbr
+# 查看分支
+$ git branch
+~~~
+
+
+
+## 8 标签操作
+
+~~~bash
+# 给自己的稳定版本增加版本标签吧
+$ git tag -a v1.0 -m 'Basic version'
+# 列出所有标签
+$ git list
+# 查看标签的详细信息
+$ git show v1.0
+# 共享标签
+$ git push origin v1.0
+~~~
+
+
 
 # 四，ROOT 分析作业
 
@@ -377,6 +540,11 @@ hep_container shell MYIMAGE
 ## 1，生成数据样本
 
 ### 1.1  定义分布函数
+
+Lorentzian Peak function:
+$$
+Loren(x) = \frac{0.5 * a0 * a1}{\pi} *\frac{1}{Max[(x - a2)^2 + 0.25 * a1 *a1, 10^{-10}]} + b0 + b1 * x + b2 * x^2
+$$
 
 ```c++
    // Quadratic background function
@@ -615,3 +783,7 @@ root[3] Double_t chi2 = fit->GetChisquare();
 **附加练习**
 
 尝试将本例中的朗道分布替换为高斯分布，完成 root 文件生成，root 文件读入，画直方图，拟合直方图。
+$$
+Gauss(x) = a * e^{-\frac{(x-b)^{2}}{2 * c^{2}}}
+$$
+
