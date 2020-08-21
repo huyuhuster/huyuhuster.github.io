@@ -78,9 +78,9 @@ vim job.sh
 
 - 编辑脚本内容
 
-1. 复制下列内容
+1, 复制下列内容
 
-```shell
+```
 #!/bin/bash
 
 echo "This job is running on $(hostname)."
@@ -92,9 +92,9 @@ echo " 1+1=$result"
 echo "Job Done!"
 ```
 
-2. 按快捷键 i 进入编辑模式
-3. 快捷键shift+insert粘贴内容至脚本文件中（或鼠标右键粘贴）
-4. esc键退出编辑模式
+2, 按快捷键 i 进入编辑模式
+3, 快捷键shift+insert粘贴内容至脚本文件中（或鼠标右键粘贴）
+4, esc键退出编辑模式
 
 - 保存并退出脚本编辑
 
@@ -175,7 +175,7 @@ $ cat job.sh.out*
 
 输出如下，说明作业正常运行结束
 
-```shell
+```
 This job is running on accap059.ihep.ac.cn.
 We're doing a simple operation:
  1+1=2
