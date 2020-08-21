@@ -51,49 +51,55 @@
 
 - 登录集群
 
-```shell
-$ ssh username@slogin.ihep.ac.cn
+```
+$ ssh username@schlogin.ihep.ac.cn
 ```
 
 注意，username需替换为你的用户名
 
 - 查看所在目录：
 
-```shell
+```
 $ pwd
 $ ls 
 ```
 
 - 创建作业脚本文件
 
-```shell
+```
 $ touch job.sh
 ```
 
 - 打开作业脚本
 
-```shell
+```
 vim job.sh
 ```
 
 - 编辑脚本内容
 
+1. 复制下列内容
+
 ```shell
 #!/bin/bash
 
 echo "This job is running on $(hostname)."
-
+/bin/sleep 10
 echo "We're doing a simple operation:"
 result=$(expr 1 + 1)
 echo " 1+1=$result"
-
+/bin/sleep 10
 echo "Job Done!"
 ```
 
-- 退出脚本编辑
+2. 按快捷键 i 进入编辑模式
+3. 快捷键shift+insert粘贴内容至脚本文件中（或鼠标右键粘贴）
+4. esc键退出编辑模式
+
+- 保存并退出脚本编辑
 
 ```shell
-:q
+:wq
 ```
 
 - 设置脚本可执行权限
@@ -102,33 +108,44 @@ echo "Job Done!"
 $ chmod +x job.sh
 ```
 
+
 ### 2, 作业提交
 
 ```shell
 $ hep_sub job.sh
 ```
 
+如果成功，显示内容如下：
+
+```shell
+1 job(s) submitted to cluster 13
+```
+
+其中，13代表作业id，作业id为作业最重要的身份信息，可利用作业id进行作业查询和删除等操作。
+
+
 ### 3, 作业查询
 
 ```shell
 # 按用户查询
-$ hep_q -u xiaoming
+$ hep_q -u test001
 
 # 按作业ID查询
-$ hep_q 1001
+$ hep_q -i 13
 
 # 如果作业状态为'H', 表明作业被挂起，可使用如下命令
-$ hep_q 1001 -hold
+$ hep_q -i 13 -hold
+$ hep_q -u test001 -hold
 ```
 
 ### 4, 作业删除
 
 ```shell
-# 按用户删除
-$ hep_rm xiaoming
+# 删除当前用户所有作业
+$ hep_rm -a
 
 # 按作业ID删除
-$ hep_rm 1001
+$ hep_rm 13
 ```
 
 ### 5, 查看作业结果
@@ -140,11 +157,11 @@ $ hep_rm 1001
 $ ls
 ```
 
-找到 .o 和 .e 文件：
+找到 .out 和 .err 文件：
 
 ```shell
-- .o 文件保存标准输出内容
-- .e 文件保存标准错误内容
+- .out 文件保存标准输出内容
+- .err 文件保存标准错误内容
 ```
 
 
@@ -158,14 +175,14 @@ $ cat job.sh.out*
 
 输出如下，说明作业正常运行结束
 
-```
-This job is running on ccopt.ihep.ac.cn.
+```shell
+This job is running on accap059.ihep.ac.cn.
 We're doing a simple operation:
  1+1=2
 Job Done!
 ```
 
-其中，ccopt.ihep.ac.cn 为作业执行节点，该节点名会根据实际执行的节点，有所变化
+其中，accap059.ihep.ac.cn 为作业执行节点，该节点名会根据实际执行的节点，有所变化
 
 
 
