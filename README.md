@@ -158,7 +158,7 @@ $ cat job.sh.out*
 
 输出如下，说明作业正常运行结束
 
-```shell
+```
 This job is running on ccopt.ihep.ac.cn.
 We're doing a simple operation:
  1+1=2
