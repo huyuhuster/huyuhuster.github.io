@@ -796,7 +796,7 @@ NO.   NAME      VALUE            ERROR      NEGATIVE      POSITIVE
 
 ```shell
 # Get Associated Function
-root[0] TF1 *fit = hist->GetFunction(function_name);
+root[0] TF1 *fit = histo->GetFunction("fitFcn");
 # value of the first parameter
 root[1] Double_t p1 = fit->GetParameter(0);
 # error of the first parameter
