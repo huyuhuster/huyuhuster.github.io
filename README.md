@@ -32,7 +32,6 @@
   * [2. 读取root文件，填直方图，画出直方图](#2---root-------------)
   * [3. 拟合直方图](#3------)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 ##  一，作业提交及使用
