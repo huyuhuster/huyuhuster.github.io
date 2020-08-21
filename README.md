@@ -35,8 +35,8 @@
   * [四, ROOT 分析作业](#四-root-分析作业)
     + [1, 生成数据样本](#1-生成数据样本)
       - [1.1  定义分布函数](#11-定义分布函数)
-      - [1.2 生成数据样本，填tree，写入root文件](#12-生成数据样本-填tree-写入root文件)
-    + [2, 读取root文件，填直方图，画出直方图](#2-读取root文件，填直方图，画出直方图)
+      - [1.2 生成数据样本, 填tree, 写入root文件](#12-生成数据样本-填tree-写入root文件)
+    + [2, 读取root文件, 填直方图, 画出直方图](#2-读取root文件，填直方图，画出直方图)
     + [3, 拟合直方图](#3-拟合直方图)
 
 
@@ -567,7 +567,7 @@ Lorentzian Peak function:
    }
 ```
 
-#### 1.2 生成数据样本，填tree，写入root文件
+#### 1.2 生成数据样本, 填tree, 写入root文件
 
 ```c++
    // create the file, the Tree and a few branches 
@@ -626,7 +626,7 @@ root [0] TBrowser a
 
 
 
-### 2, 读取root文件，填直方图，画出直方图
+### 2, 读取root文件, 填直方图, 画出直方图
 
 ```c++
    TFile *f = new TFile("tree.root");
