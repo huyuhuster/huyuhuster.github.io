@@ -386,7 +386,7 @@ $ git config --list --show-origin
 ~~~
 
 - 设置 alias (可选)
-```bash
+~~~bash
 [user]
         name = "Your-name"
         email = "Your-email"
@@ -410,9 +410,9 @@ $ git config --list --show-origin
 
 [push]
         default = matching
-```
+~~~
 - ssh 配置(可选)
-```bash
+```shell
 #### ~/.ssh/config
 Host code
         Hostname code.ihep.ac.cn
