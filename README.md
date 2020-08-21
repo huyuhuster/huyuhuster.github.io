@@ -543,9 +543,7 @@ $ git push origin v1.0
 ### 1.1  定义分布函数
 
 Lorentzian Peak function:
-$$
-Loren(x) = \frac{0.5 * a0 * a1}{\pi} *\frac{1}{Max[(x - a2)^2 + 0.25 * a1 *a1, 10^{-10}]} + b0 + b1 * x + b2 * x^2
-$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=Loren(x)&space;=&space;\frac{0.5&space;*&space;a0&space;*&space;a1}{\pi}&space;*\frac{1}{Max[(x&space;-&space;a2)^2&space;&plus;&space;0.25&space;*&space;a1&space;*a1,&space;10^{-10}]}&space;&plus;&space;b0&space;&plus;&space;b1&space;*&space;x&space;&plus;&space;b2&space;*&space;x^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Loren(x)&space;=&space;\frac{0.5&space;*&space;a0&space;*&space;a1}{\pi}&space;*\frac{1}{Max[(x&space;-&space;a2)^2&space;&plus;&space;0.25&space;*&space;a1&space;*a1,&space;10^{-10}]}&space;&plus;&space;b0&space;&plus;&space;b1&space;*&space;x&space;&plus;&space;b2&space;*&space;x^2" title="Loren(x) = \frac{0.5 * a0 * a1}{\pi} *\frac{1}{Max[(x - a2)^2 + 0.25 * a1 *a1, 10^{-10}]} + b0 + b1 * x + b2 * x^2" /></a>
 
 ```c++
    // Quadratic background function
@@ -784,8 +782,5 @@ root[3] Double_t chi2 = fit->GetChisquare();
 **附加练习**
 
 尝试将本例中的朗道分布替换为高斯分布，完成 root 文件生成，root 文件读入，画直方图，拟合直方图。
-![](http://latex.codecogs.com/gif.latex?\Gauss(x) = a * e^{-\frac{(x-b)^{2}}{2 * c^{2}}})
-$$
-Gauss(x) = a * e^{-\frac{(x-b)^{2}}{2 * c^{2}}}
-$$
 
+<a href="https://www.codecogs.com/eqnedit.php?latex=Gauass&space;=&space;a&space;\cdot&space;e^{-\frac{(x-b)^{2}}{2&space;c^{2}}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Gauass&space;=&space;a&space;\cdot&space;e^{-\frac{(x-b)^{2}}{2&space;c^{2}}}" title="Gauass = a \cdot e^{-\frac{(x-b)^{2}}{2 c^{2}}}" /></a>
