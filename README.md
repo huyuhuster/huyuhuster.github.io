@@ -784,6 +784,7 @@ root[3] Double_t chi2 = fit->GetChisquare();
 **附加练习**
 
 尝试将本例中的朗道分布替换为高斯分布，完成 root 文件生成，root 文件读入，画直方图，拟合直方图。
+![](http://latex.codecogs.com/gif.latex?\Gauss(x) = a * e^{-\frac{(x-b)^{2}}{2 * c^{2}}})
 $$
 Gauss(x) = a * e^{-\frac{(x-b)^{2}}{2 * c^{2}}}
 $$
