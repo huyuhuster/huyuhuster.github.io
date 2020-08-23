@@ -535,7 +535,7 @@ $ git push origin v1.0
 ## 四, ROOT 分析作业
 
 
- 复制练习示例
+ **查看练习示例脚本**
 
 ```shell
 > cp  -r root_exercise/  ~$home
