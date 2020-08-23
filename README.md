@@ -577,7 +577,7 @@ Lorentzian Peak function:
 
 ```c++
    // create the file, the Tree and a few branches 
-   TFile f("tree.root","recreate");   
+   TFile *file = TFile::Open("tree.root","recreate");   
    TTree *tree = new TTree("tree","treelibrated tree");
    Float_t x, y;
 
@@ -635,7 +635,7 @@ root [0] TBrowser a
 ### 2, 读取root文件, 填直方图, 画出直方图
 
 ```c++
-   TFile *f = new TFile("tree.root");
+   TFile *f = TFile::Open("tree.root");
    TTree *t1 = (TTree*)f->Get("tree");
    
    Float_t x, y;
@@ -689,7 +689,7 @@ root [0]
 
 ```c++
    // Read the Tree 
-   TFile *f = new TFile("tree.root");
+   TFile *f = TFile::Open("tree.root");
    TTree *t1 = (TTree*)f->Get("tree");
 
    TCanvas *c1 = new TCanvas("c1","Fitting Demo",10,10,700,500);
