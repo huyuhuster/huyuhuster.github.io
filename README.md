@@ -240,7 +240,7 @@ export PATH=$PATH:/cvmfs/container.ihep.ac.cn/bin/
 - 容器内用户只有自己实验组的数据盘访问权限，安全性高
 
 
-### 2.1 命令说明
+#### 2.1 命令说明
 
 Hep_container的容器命令主要有以下操作images、shell、exec等。可以在命令行中通过help参数查看各个命令的使用说明和样例
 
