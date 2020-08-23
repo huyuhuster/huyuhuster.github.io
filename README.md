@@ -194,27 +194,27 @@ Job Done!
 
 ### 1 容器技术介绍
 
-​        容器是一种轻量级、可移植、自包含的软件打包技术，使应用程序可以在几乎任何地方以相同的方式运行。无需任何修改就能够在生产系统的虚拟机、物理服务器或公有云主机上运行。
+容器是一种轻量级、可移植、自包含的软件打包技术，使应用程序可以在几乎任何地方以相同的方式运行。无需任何修改就能够在生产系统的虚拟机、物理服务器或公有云主机上运行。
 
 #### 1.1 容器的特点 
 
-跨环境、可移植、资源和应用隔离性、安全性
+跨环境、可移植、资源和应用隔离性、安全性。
 
 #### 1.2 容器与虚拟机区别
 
-•容器直接运行在内核上
+- 容器直接运行在内核上
 
-•容器优势启动快、高性能和低延迟
+- 容器优势启动快、高性能和低延迟
 
-•虚拟机可以虚拟硬件不依赖内核、隔离更加彻底
+- 虚拟机可以虚拟硬件不依赖内核、隔离更加彻底
+
 
 #### 1.3 容器引擎
 
-​         Singularity是目前在高性能计算平台上被大量应用的轻量虚拟化容器技术，能够提供操作系统级的虚拟化。
+Singularity是目前在高性能计算平台上被大量应用的轻量虚拟化容器技术，能够提供操作系统级的虚拟化。
 
-•Singularity 更轻、适合HPC，MPI(OpenMPI, MPICH, IntelMPI),GPU,infiniband
-
-•Singularity 的用户权限容器内外都一致, /dev, /sys and /proc automount，安全性高
+- Singularity 更轻、适合HPC，MPI(OpenMPI, MPICH, IntelMPI),GPU,infiniband
+- Singularity 的用户权限容器内外都一致, /dev, /sys and /proc automount，安全性高
 
 ### 2 hep_container
 
@@ -222,28 +222,30 @@ Job Done!
 
 ```bash
 /cvmfs/container.ihep.ac.cn/bin/
+export PATH=$PATH:/cvmfs/container.ihep.ac.cn/bin/
 ```
 
 ##### Hep_container的特点
 
-•hep_container容器统一运行入口程序
+- hep_container容器统一运行入口程序
 
-•用户对容器操作统一
+- 用户对容器操作统一
 
-•容器的参数配置和镜像路径对用户透明
+- 容器的参数配置和镜像路径对用户透明
 
-•容器更新不会影响到当前用户的使用
+- 容器更新不会影响到当前用户的使用
 
-•实现同一容器在不同站点上运行不同的作业配置策略，高能所、科大、北京大学等站点多种作业调度配置
+- 实现同一容器在不同站点上运行不同的作业配置策略，高能所、科大、北京大学等站点多种作业调度配置
 
-•容器内用户只有自己实验组的数据盘访问权限，安全性高
+- 容器内用户只有自己实验组的数据盘访问权限，安全性高
+
 
 ### 2.1 命令说明
 
-Hep_container的容器命令主要有一下操作images、shell、exec、groups。可以在命令行中通过help参数查看各个命令的使用说明和样例
+Hep_container的容器命令主要有以下操作images、shell、exec等。可以在命令行中通过help参数查看各个命令的使用说明和样例
 
 ```bash
-$ ./hep_container  help
+$ hep_container  help
 Usage : ./hep_container  <command> [command options...]
 CONTAINER USAGE COMMANDS:
     shell           Run a Bourne shell within container image
@@ -282,7 +284,7 @@ Hep_container support images:
 ```bash
 $ hep_container groups
 Hep_container support groups:
-  u07|atlas|atlasrun|comet|offline|physics|higgs|ams|cms|dyw|hxmt|polars|juno|argo|lhaaso|
+  u07|atlas|atlasrun|comet|offline|physics|higgs|ams|cms|dyw|hxmt|polars|juno|argo|lhaaso|sch
 ```
 
 #### 2.4 进入容器环境
@@ -306,25 +308,6 @@ exit
 $ hep_container exec SL5 cat /etc/redhat-release
 Scientific Linux SL release 5.5 (Boron)
 ```
-
-#### 2.6 组参数
-
-不同实验组的用户进入到容器会挂载对应实验的数据盘。 如果不指定-g 组参数，默认挂载所属主组实验的数据盘。-g 可以加一个组或多个组，多组以：隔开 查看自己的组信息。第一个gid一般为主组
-
-```bash
-[user@lxslc705 ~]$ id liming
-uid=60020(liming) gid=600(u07) groups=600(u07),290(physics),1004(juno)
-hep_container shell SL5 -g physics
-hep_container shell SL6 -g juno:dyw
-```
-
-Registry镜像仓库
-
-•index 负责并维护有关用户帐户、镜像的校验以及公共命名空间的信息。维护Web UI 元数据存储 认证服务等
-
-•registry是镜像仓库，存储镜像和图表。本地或者远程（Docker hub）
-
-•Registry Client 负责维护推送和拉取的任务
 
 ### 3 镜像制作
 
@@ -369,14 +352,13 @@ sudo singularity build mymkimage.sif mymkimage.def
 #### 3.2 使用自制镜像
 
 ```
-export MYIMAGE=/home/username/mymkimage.sif
+export MYIMAGE=/home/sch/test001/mymkimage.sif
 hep_container shell MYIMAGE 
 ```
 
 #### 3.3 其他镜像制作方法
 
 参考 https://sylabs.io/guides/3.5/user-guide/build_a_container.html
-
 
 
 ## 三, Git 使用
