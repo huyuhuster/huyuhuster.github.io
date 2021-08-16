@@ -38,7 +38,7 @@
       - [1.2 生成数据样本, 填tree, 写入root文件](#12-生成数据样本-填tree-写入root文件)
     + [2, 读取root文件, 填直方图, 画出直方图](#2-读取root文件，填直方图，画出直方图)
     + [3, 拟合直方图](#3-拟合直方图)
-  * [五, CMAKE编译](#五-CMAKE编译)
+  * [五, CMAKE 编译](#五-CMAKE-编译)
     + [1, 编译可执行文件](#1-编译可执行文件)
       - [1.1 命令行编译](#11-命令行编译)
       - [1.2 Make编译](#12-Make编译)
@@ -791,7 +791,7 @@ root[3] Double_t chi2 = fit->GetChisquare();
 <a href="https://www.codecogs.com/eqnedit.php?latex=Gauass&space;=&space;a&space;\cdot&space;e^{-\frac{(x-b)^{2}}{2&space;c^{2}}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Gauass&space;=&space;a&space;\cdot&space;e^{-\frac{(x-b)^{2}}{2&space;c^{2}}}" title="Gauass = a \cdot e^{-\frac{(x-b)^{2}}{2 c^{2}}}" /></a>
 
 
-## 五，CMAKE编译
+## 五, CMAKE 编译
 
 **查看练习示例脚本**
 
