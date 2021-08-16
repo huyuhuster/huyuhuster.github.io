@@ -38,6 +38,13 @@
       - [1.2 生成数据样本, 填tree, 写入root文件](#12-生成数据样本-填tree-写入root文件)
     + [2, 读取root文件, 填直方图, 画出直方图](#2-读取root文件，填直方图，画出直方图)
     + [3, 拟合直方图](#3-拟合直方图)
+  * [五, CMAKE编译](#五-CMAKE编译)
+    + [1, 编译可执行文件](#1-编译可执行文件)
+      - [1.1 命令行编译](#11-命令行编译)
+      - [1.2 Make编译](#12-Make编译)
+      - [1.3 CMake编译](#12-CMake编译)
+    + [2, 编译动态链接库](#2-编译动态链接库)
+    + [3, 链接动态链接库](#3-链接动态链接库)
 
 
 
@@ -782,3 +789,169 @@ root[3] Double_t chi2 = fit->GetChisquare();
 尝试将本例中的朗道分布替换为高斯分布，完成 root 文件生成，root 文件读入，画直方图，拟合直方图。
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=Gauass&space;=&space;a&space;\cdot&space;e^{-\frac{(x-b)^{2}}{2&space;c^{2}}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Gauass&space;=&space;a&space;\cdot&space;e^{-\frac{(x-b)^{2}}{2&space;c^{2}}}" title="Gauass = a \cdot e^{-\frac{(x-b)^{2}}{2 c^{2}}}" /></a>
+
+
+## 五，CMAKE编译
+
+**查看练习示例脚本**
+
+```shell
+> cd cmake_exercise/
+> ls
+-rw-r--r-- 1 user group  1792 Aug 16 19:45 cmake1
+-rw-r--r-- 1 user group   969 Aug 16 19:49 cmake2
+-rw-r--r-- 1 user group  2848 Aug 16 19:40 cmake3
+```
+
+### 1. 编译可执行文件
+
+#### 1.1 命令行编译
+
+C++源代码
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+
+int main(int argc,char** argv)
+{
+    cout << "Hello for cmake!" << endl;
+    return 0;
+}
+```
+
+**操作练习**
+
+```shell
+g++ -o helloworld helloworld.cpp
+```
+
+#### 1.2 Make编译
+
+Makefile
+
+```makefile
+helloMake: helloworld.cpp
+	g++ helloworld.cpp -o helloMake
+
+clean:
+	rm helloMake  -rf
+```
+
+**操作练习**
+
+```shell
+make
+```
+
+#### 1.3 CMake编译
+
+CMakeLists.txt
+
+```CMakeLists
+cmake_minimum_required(VERSION 2.8.11)
+project(HELLO)
+add_definitions(-w)
+
+add_executable(helloworld helloworld.cpp)
+```
+
+**操作练习**
+
+```shell
+mkdir build
+cd build
+cmake ..
+make
+```
+
+### 2. 编译动态链接库
+
+C++源代码
+
+```c++
+#include <iostream>
+#include "sayhello.hpp"
+
+
+void say_hello()
+{
+    std::cout << "Say Hello from DL builded by CMake" << std::endl;
+}
+```
+
+CMakeLists.txt
+
+```CMakeLists
+cmake_minimum_required(VERSION 2.8.11)
+project(SayHelloLib)
+
+include_directories("sayhello")
+add_library(sayhello SHARED sayhello.cpp)
+
+
+INSTALL(TARGETS   sayhello LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/../lib)
+INSTALL(DIRECTORY sayhello DESTINATION ${PROJECT_SOURCE_DIR}/../inc)
+```
+
+
+**操作练习**
+
+```shell
+mkdir build
+cd build
+cmake ..
+make
+```
+
+
+### 3. 链接动态链接库
+
+C++源代码
+
+```c++
+#include <iostream>
+#include "sayhello/sayhello.hpp"
+
+using namespace std;
+
+int main(int argc,char** argv)
+{
+    cout << "Hello for cmake!" << endl;
+    say_hello();
+    return 0;
+}
+```
+
+环境变量设置
+
+```shell
+export PATH=/home/tianhl/workarea/CMakeWorkshop/bin:$PATH
+export LD_LIBRARY_PATH=/home/tianhl/workarea/CMakeWorkshop/lib:$LD_LIBRARY_PATH
+```
+
+CMakeLists.txt
+
+```CMakeLists
+cmake_minimum_required(VERSION 2.8.11)
+project(CallHELLO)
+
+link_directories(${PROJECT_SOURCE_DIR}/../lib)
+include_directories(${PROJECT_SOURCE_DIR}/../inc)
+add_executable(helloDL helloDL.cpp)
+
+target_link_libraries(helloDL sayhello)
+
+INSTALL(TARGETS helloDL DESTINATION ${PROJECT_SOURCE_DIR}/../bin)
+```
+
+**操作练习**
+
+```shell
+mkdir build
+cd build
+cmake ..
+make
+```
